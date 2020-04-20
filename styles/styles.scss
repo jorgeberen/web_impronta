@@ -6,6 +6,14 @@ $bg-secondary: #9099ad;
 $text-dark: #102555;
 $text-light: #fff;
 $bg-nav: #0f7b94;
+$display-wide: 1920;
+$display-narrow: 320;
+
+@mixin fluid($property, $minValue, $maxValue) {
+  $x: ($maxValue - $minValue)/ ($display-wide - $display-narrow);
+  $y: $maxValue - $display-wide * $x;
+  #{$property}: calc(#{100 * $x}vw + #{$y}px);
+}
 
 * {
   box-sizing: border-box;
@@ -41,6 +49,9 @@ $bg-nav: #0f7b94;
     padding-right: 0.5em;
     li {
       display: inline-block;
+    }
+    a {
+      color: $text-light;
     }
   }
   .social {
@@ -78,15 +89,31 @@ $bg-nav: #0f7b94;
   grid-template-columns: 1fr 1fr;
   background-color: $bg-primary;
   img {
-    width: 400px;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
   }
   .lyrics {
     display: flex;
     margin: auto;
     max-width: 400px;
     font-family: $font-secondary;
-    font-size: 1.2em;
+    @include fluid("font-size", 14, 30);
     padding: 0 1em;
     color: $text-light;
   }
 }
+
+footer {
+  text-align: center;
+  background-color: $bg-primary;
+  color: teal;
+  padding: 0.5em;
+  font-family: $font-secondary;
+}
+
+// @media only screen and (min-width: 800px) {
+//   .gallery {
+//     grid-template-columns: 1fr 1fr 1fr;
+//   }
+// }
