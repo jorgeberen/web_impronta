@@ -1,0 +1,99 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #0f7b94;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+
+.nav-bar .logo {
+  margin: auto 0;
+  padding: 0.5em 0 0.5em 1em;
+}
+
+.nav-bar .logo img {
+  width: 100px;
+}
+
+.nav-bar h1 {
+  font-family: "Courgette", cursive;
+  color: #fff;
+}
+
+.nav-bar ul {
+  list-style: none;
+  padding-right: 0.5em;
+}
+
+.nav-bar ul li {
+  display: inline-block;
+}
+
+.nav-bar .social {
+  font-size: 1.5em;
+}
+
+.nav-bar .social li {
+  padding: 0 0.3em;
+}
+
+.hero {
+  position: relative;
+  top: 104.4px;
+  width: 100%;
+  height: calc(100vh - 105px);
+}
+
+.hero .yt-video {
+  width: 100%;
+  height: 100%;
+}
+
+.hero iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery {
+  position: relative;
+  top: 0;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  background-color: #031337;
+}
+
+.gallery img {
+  width: 400px;
+}
+
+.gallery .lyrics {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  max-width: 400px;
+  font-family: "Cairo", sans-serif;
+  font-size: 1.2em;
+  padding: 0 1em;
+  color: #fff;
+}
+/*# sourceMappingURL=styles.css.map */
