@@ -1,3 +1,9 @@
+@font-face {
+  font-family: plicata;
+  src: url(./Plicata_PERSONAL_USE_ONLY.ttf);
+  font-weight: 400;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -32,7 +38,7 @@
 }
 
 .nav-bar h1 {
-  font-family: "Courgette", cursive;
+  font-family: plicata;
   color: #fff;
 }
 
@@ -59,9 +65,9 @@
 
 .hero {
   position: relative;
-  top: 104.4px;
+  top: 120.433px;
   width: 100%;
-  height: calc(100vh - 105px);
+  height: calc(100vh - 120.433px);
 }
 
 .hero .yt-video {
@@ -72,6 +78,9 @@
 .hero iframe {
   width: 100%;
   height: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 .gallery {
@@ -103,10 +112,56 @@
   color: #fff;
 }
 
+.biographies {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.biographies .member {
+  width: 200%;
+  height: 100%;
+  position: relative;
+}
+
+.biographies #man1 {
+  position: relative;
+}
+
+.biographies #man1:hover {
+  width: 100%;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  z-index: 12;
+}
+
+.biographies #desc {
+  position: absolute;
+  color: white;
+  top: 0;
+  left: 300px;
+  z-index: 0;
+  width: 300%;
+  height: 100%;
+  text-align: center;
+  background-color: #0f7b94;
+}
+
+.biographies #desc p {
+  position: absolute;
+  top: 50%;
+  padding-left: 100px;
+}
+
 footer {
   text-align: center;
   background-color: #031337;
-  color: teal;
+  color: #0f7b94;
   padding: 0.5em;
   font-family: "Cairo", sans-serif;
 }
