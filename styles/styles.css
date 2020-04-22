@@ -404,6 +404,9 @@ footer a {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .nav-bar .logo {
+    padding: 0;
+  }
   .nav-bar h1 {
     display: none;
   }

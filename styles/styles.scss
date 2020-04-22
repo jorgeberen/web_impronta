@@ -374,6 +374,9 @@ footer {
 @media (max-width: 588px) {
   .nav-bar {
     flex-direction: column;
+    .logo {
+      padding: 0;
+    }
     h1 {
       display: none;
     }
