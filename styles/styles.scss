@@ -31,13 +31,15 @@ $display-narrow: 320;
 
 .nav-bar {
   display: flex;
+  top: 0;
   justify-content: space-between;
   align-items: center;
   background-color: $bg-nav;
   color: $text-light;
-  position: fixed;
+  position: sticky;
   width: 100%;
   z-index: 2;
+
   .logo {
     margin: auto 0;
     padding: 0.5em 0 0.5em 1em;
@@ -71,13 +73,12 @@ $display-narrow: 320;
 // Hero Section
 
 .hero {
-  position: relative;
-  top: 120.433px;
   width: 100%;
   height: calc(100vh - 120.433px);
   .yt-video {
     width: 100%;
     height: 100%;
+    overflow: hidden;
   }
   iframe {
     width: 100%;
@@ -85,16 +86,16 @@ $display-narrow: 320;
     margin: 0;
     padding: 0;
     border: none;
+    overflow: hidden;
   }
 }
 
 // Gallery Section
 
 .gallery {
-  position: relative;
-  top: 0;
   width: 100%;
   display: grid;
+
   grid-template-columns: 1fr 1fr;
   background-color: $bg-primary;
   img {
@@ -113,58 +114,220 @@ $display-narrow: 320;
   }
 }
 
+// Section Divider
+.divider {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1.5em 1em 1em 1em;
+}
+
+.divider li {
+  display: inline-block;
+}
+
+.line {
+  width: 10em;
+  height: 12px;
+  background-color: $bg-nav;
+}
+
+.compact {
+  i {
+    font-size: 70px;
+    padding: 0 0.5em;
+  }
+}
+
 // Bio Section
 
-.biographies {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  max-width: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
-
-  .member {
-    width: 200%;
-    height: 100%;
-    position: relative;
-
-    // &:hover {
-    //   // width: 100%;
-    //   cursor: pointer;
-    //   transform: scale(1.2);
-    //   transition: ease-in-out 1s;
-    // }
-  }
-  // #last:hover {
-  //   transform: translateX(-60%);
-  //   transition: ease-in-out 1s;
-  // }
-
-  #man1 {
-    position: relative;
-
-    &:hover {
-      width: 100%;
-      transform: scale(1.2);
-      z-index: 12;
-    }
-  }
-
-  #desc {
-    position: absolute;
-    color: white;
-    top: 0;
-    left: 300px;
-    z-index: 0;
-    width: 300%;
-    height: 100%;
+.short-bio {
+  width: 100%;
+  display: flex;
+  p {
+    font-family: $font-secondary;
+    @include fluid("font-size", 14, 30);
+    padding: 0.5em 2em 2em 2em;
     text-align: center;
-    background-color: $bg-nav;
-    p {
-      position: absolute;
-      top: 50%;
-      padding-left: 100px;
-    }
+    max-width: 800px;
+    margin: auto;
+  }
+}
+
+.n-band {
+  color: $text-dark;
+  @include fluid("font-size", 16, 32);
+  font-weight: bolder;
+}
+
+// Band photos
+
+.band-members {
+  display: grid;
+
+  gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "victor nerea dani"
+    "david ... pablo";
+  width: 100%;
+  height: auto;
+
+  padding: 1em;
+}
+#victor {
+  grid-area: victor;
+}
+
+#nerea {
+  grid-area: nerea;
+}
+
+#dani {
+  grid-area: dani;
+}
+
+#david {
+  grid-area: david;
+}
+
+#pablo {
+  grid-area: pablo;
+}
+
+.member {
+  // width: 18em;
+  height: 15em;
+  background-color: rgb(56, 53, 53);
+  justify-content: center;
+  // border: solid 1px $bg-nav;
+  p {
+    font-family: $font-secondary;
+    @include fluid("font-size", 18, 30);
+    padding: 0.5em 2em 0.5em 2em;
+    text-align: center;
+    color: $text-light;
+  }
+}
+
+#im-viral {
+  background-image: url(../img/logoneonblanco.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.round-photo {
+  width: 8em;
+  height: 8em;
+  // position: absolute;
+  // top: 3em;
+  // left: 1em;
+  border-radius: 50%;
+  // background-size: 80%;
+  // background-position: center;
+  // background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+.foto1 {
+  background-color: rgb(209, 52, 52);
+  background-image: url(../img/band1.png);
+  background-size: 120%;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 11;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: all 1s;
+}
+
+.foto2 {
+  background-color: rgb(209, 52, 52);
+  background-image: url(../img/band2.png);
+  background-size: 120%;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 11;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: all 1s;
+}
+
+.foto3 {
+  background-color: rgb(209, 52, 52);
+  background-image: url(../img/band3.png);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 11;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: all 1s;
+}
+
+.foto4 {
+  background-color: rgb(209, 52, 52);
+  background-image: url(../img/band4.png);
+  background-size: 100%;
+  background-position: 75%;
+  background-repeat: no-repeat;
+  z-index: 11;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: all 1s;
+}
+
+.foto5 {
+  background-color: rgb(209, 52, 52);
+  background-image: url(../img/band5.png);
+  background-size: 120%;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 11;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: all 1s;
+}
+
+.foto1:hover,
+.foto2:hover,
+.foto3:hover,
+.foto4:hover,
+.foto5:hover {
+  transform: scale(1.2);
+}
+
+.instr {
+  font-size: 70px;
+}
+
+// Contratación
+
+.hiring {
+  height: 100px;
+  background-color: $bg-primary;
+  font-family: $font-secondary;
+  color: $text-light;
+  display: flex;
+  a {
+    color: $text-light;
+  }
+  h3 {
+    margin: auto;
   }
 }
 
@@ -176,31 +339,26 @@ footer {
   color: $bg-nav;
   padding: 0.5em;
   font-family: $font-secondary;
+  line-height: 15px;
+  a {
+    text-decoration: none;
+    color: orange;
+  }
 }
 
-// @media only screen and (min-width: 800px) {
-//   .gallery {
-//     grid-template-columns: 1fr 1fr 1fr;
-//   }
-// }
-
-// .person {
-//   // img {
-//   //   width: 400px;
-//   // }
-//   &:hover {
-//     &:after {
-//       content: "CABRONEEEEEES";
-// position: absolute;
-// top: 0;
-// bottom: 0;
-// right: 0;
-// left: 0;
-// color: white;
-// z-index: 11;
-// width: 100%;
-// height: 50%;
-// background-color: teal;
-//     }
-//   }
-// }
+@media (max-width: 840px) {
+  .band-members {
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    // grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "victor nerea"
+      "dani david"
+      "pablo ...";
+    width: 100%;
+    .member {
+      height: 15em;
+      background-color: rgb(241, 187, 187);
+    }
+  }
+}

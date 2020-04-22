@@ -15,6 +15,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  top: 0;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -23,7 +24,8 @@
           align-items: center;
   background-color: #0f7b94;
   color: #fff;
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   width: 100%;
   z-index: 2;
 }
@@ -64,8 +66,6 @@
 }
 
 .hero {
-  position: relative;
-  top: 120.433px;
   width: 100%;
   height: calc(100vh - 120.433px);
 }
@@ -73,6 +73,7 @@
 .hero .yt-video {
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 .hero iframe {
@@ -81,11 +82,10 @@
   margin: 0;
   padding: 0;
   border: none;
+  overflow: hidden;
 }
 
 .gallery {
-  position: relative;
-  top: 0;
   width: 100%;
   display: -ms-grid;
   display: grid;
@@ -112,50 +112,253 @@
   color: #fff;
 }
 
-.biographies {
-  position: relative;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  max-width: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
-.biographies .member {
-  width: 200%;
-  height: 100%;
-  position: relative;
-}
-
-.biographies #man1 {
-  position: relative;
-}
-
-.biographies #man1:hover {
+.divider {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  z-index: 12;
+  padding: 1.5em 1em 1em 1em;
 }
 
-.biographies #desc {
-  position: absolute;
-  color: white;
-  top: 0;
-  left: 300px;
-  z-index: 0;
-  width: 300%;
-  height: 100%;
-  text-align: center;
+.divider li {
+  display: inline-block;
+}
+
+.line {
+  width: 10em;
+  height: 12px;
   background-color: #0f7b94;
 }
 
-.biographies #desc p {
-  position: absolute;
-  top: 50%;
-  padding-left: 100px;
+.compact i {
+  font-size: 70px;
+  padding: 0 0.5em;
+}
+
+.short-bio {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.short-bio p {
+  font-family: "Cairo", sans-serif;
+  font-size: calc(1vw + 10.8px);
+  padding: 0.5em 2em 2em 2em;
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.n-band {
+  color: #102555;
+  font-size: calc(1vw + 12.8px);
+  font-weight: bolder;
+}
+
+.band-members {
+  display: -ms-grid;
+  display: grid;
+  gap: 10px;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: "victor nerea dani" "david ... pablo";
+  width: 100%;
+  height: auto;
+  padding: 1em;
+}
+
+#victor {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: victor;
+}
+
+#nerea {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: nerea;
+}
+
+#dani {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: dani;
+}
+
+#david {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: david;
+}
+
+#pablo {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: pablo;
+}
+
+.member {
+  height: 15em;
+  background-color: #383535;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.member p {
+  font-family: "Cairo", sans-serif;
+  font-size: calc(0.75vw + 15.6px);
+  padding: 0.5em 2em 0.5em 2em;
+  text-align: center;
+  color: #fff;
+}
+
+#im-viral {
+  background-image: url(../img/logoneonblanco.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.round-photo {
+  width: 8em;
+  height: 8em;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.foto1 {
+  background-color: #d13434;
+  background-image: url(../img/band1.png);
+  background-size: 120%;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 11;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.foto2 {
+  background-color: #d13434;
+  background-image: url(../img/band2.png);
+  background-size: 120%;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 11;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.foto3 {
+  background-color: #d13434;
+  background-image: url(../img/band3.png);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 11;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.foto4 {
+  background-color: #d13434;
+  background-image: url(../img/band4.png);
+  background-size: 100%;
+  background-position: 75%;
+  background-repeat: no-repeat;
+  z-index: 11;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.foto5 {
+  background-color: #d13434;
+  background-image: url(../img/band5.png);
+  background-size: 120%;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 11;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.foto1:hover,
+.foto2:hover,
+.foto3:hover,
+.foto4:hover,
+.foto5:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.instr {
+  font-size: 70px;
+}
+
+.hiring {
+  height: 100px;
+  background-color: #031337;
+  font-family: "Cairo", sans-serif;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.hiring a {
+  color: #fff;
+}
+
+.hiring h3 {
+  margin: auto;
 }
 
 footer {
@@ -164,5 +367,25 @@ footer {
   color: #0f7b94;
   padding: 0.5em;
   font-family: "Cairo", sans-serif;
+  line-height: 15px;
+}
+
+footer a {
+  text-decoration: none;
+  color: orange;
+}
+
+@media (max-width: 840px) {
+  .band-members {
+    gap: 10px;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "victor nerea" "dani david" "pablo ...";
+    width: 100%;
+  }
+  .band-members .member {
+    height: 15em;
+    background-color: #f1bbbb;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
