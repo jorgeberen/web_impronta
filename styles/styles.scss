@@ -31,6 +31,7 @@ $display-narrow: 320;
 
 .nav-bar {
   display: flex;
+  flex-wrap: wrap;
   top: 0;
   justify-content: space-between;
   align-items: center;
@@ -48,9 +49,11 @@ $display-narrow: 320;
     }
   }
 
-  h1 {
+  .banda {
     font-family: plicata;
     color: $text-light;
+    text-align: center;
+    margin: auto;
   }
   ul {
     list-style: none;
@@ -64,6 +67,7 @@ $display-narrow: 320;
   }
   .social {
     font-size: 1.5em;
+
     li {
       padding: 0 0.3em;
     }
@@ -323,6 +327,7 @@ $display-narrow: 320;
   font-family: $font-secondary;
   color: $text-light;
   display: flex;
+  text-align: center;
   a {
     color: $text-light;
   }
@@ -358,7 +363,26 @@ footer {
     width: 100%;
     .member {
       height: 15em;
-      background-color: rgb(241, 187, 187);
+    }
+  }
+  .social {
+    margin: auto;
+    padding-bottom: 0.5em;
+  }
+}
+
+@media (max-width: 588px) {
+  .nav-bar {
+    flex-direction: column;
+    h1 {
+      display: none;
+    }
+  }
+  .band-members {
+    display: flex;
+    flex-direction: column;
+    #im-viral {
+      display: none;
     }
   }
 }
